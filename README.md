@@ -255,3 +255,7 @@ docs/screenshots/        images used in this README
 
 - Built by [@sufiyan-shah0301](https://github.com/sufiyan-shah0301): backend, ML models and frontend.
 - Datasets belong to their respective Kaggle authors; check each dataset's terms before redistributing the trained models.
+
+## License
+
+Released under the [MIT License](LICENSE).
