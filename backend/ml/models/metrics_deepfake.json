@@ -1,0 +1,126 @@
+{
+  "dataset": "Kaggle: manjilkarki/deepfake-and-real-images",
+  "n_train": 12000,
+  "n_validation": 2000,
+  "n_test": 2000,
+  "test_split": "official Test folder (never seen in training); 'degraded' = same images re-compressed / rescaled",
+  "deployed_model": "Stacked ensemble (CLIP logistic regression + CLIP MLP + forensic Random Forest)",
+  "comparison_on_test": {
+    "Logistic Regression (CLIP)": {
+      "roc_auc": 0.8752,
+      "pr_auc": 0.8708,
+      "accuracy": 0.77,
+      "precision": 0.7136,
+      "recall": 0.902,
+      "f1": 0.7968
+    },
+    "MLP (CLIP)": {
+      "roc_auc": 0.8799,
+      "pr_auc": 0.8713,
+      "accuracy": 0.778,
+      "precision": 0.721,
+      "recall": 0.907,
+      "f1": 0.8034
+    },
+    "Random Forest (forensic features)": {
+      "roc_auc": 0.5944,
+      "pr_auc": 0.5832,
+      "accuracy": 0.57,
+      "precision": 0.5503,
+      "recall": 0.766,
+      "f1": 0.6405
+    },
+    "Stacked ensemble (shipped)": {
+      "roc_auc": 0.8849,
+      "pr_auc": 0.8787,
+      "accuracy": 0.7945,
+      "precision": 0.7392,
+      "recall": 0.91,
+      "f1": 0.8158
+    }
+  },
+  "comparison_on_test_degraded": {
+    "Logistic Regression (CLIP)": {
+      "roc_auc": 0.8801,
+      "pr_auc": 0.8724,
+      "accuracy": 0.785,
+      "precision": 0.7371,
+      "recall": 0.886,
+      "f1": 0.8047
+    },
+    "MLP (CLIP)": {
+      "roc_auc": 0.8808,
+      "pr_auc": 0.8706,
+      "accuracy": 0.7915,
+      "precision": 0.7383,
+      "recall": 0.903,
+      "f1": 0.8124
+    },
+    "Random Forest (forensic features)": {
+      "roc_auc": 0.5762,
+      "pr_auc": 0.5673,
+      "accuracy": 0.556,
+      "precision": 0.5505,
+      "recall": 0.61,
+      "f1": 0.5787
+    },
+    "Stacked ensemble (shipped)": {
+      "roc_auc": 0.8876,
+      "pr_auc": 0.8777,
+      "accuracy": 0.799,
+      "precision": 0.7569,
+      "recall": 0.881,
+      "f1": 0.8142
+    }
+  },
+  "isolation_forest": {
+    "roc_auc_vs_fake_label": 0.4727,
+    "flagged_share": 0.036,
+    "fake_rate_in_flagged": 0.4306,
+    "fake_rate_in_unflagged": 0.5026
+  },
+  "rf_top_features": [
+    {
+      "feature": "fft_slope",
+      "importance": 0.0404
+    },
+    {
+      "feature": "noise_skew",
+      "importance": 0.0363
+    },
+    {
+      "feature": "ela_block_cv",
+      "importance": 0.0354
+    },
+    {
+      "feature": "sat_mean",
+      "importance": 0.0324
+    },
+    {
+      "feature": "fft_high_ratio",
+      "importance": 0.0322
+    },
+    {
+      "feature": "fft_ring_1",
+      "importance": 0.0319
+    },
+    {
+      "feature": "fft_peak_ratio",
+      "importance": 0.0319
+    },
+    {
+      "feature": "ela_block_std",
+      "importance": 0.0318
+    },
+    {
+      "feature": "hue_std",
+      "importance": 0.0311
+    },
+    {
+      "feature": "luma_std",
+      "importance": 0.031
+    }
+  ],
+  "clip_model": "sentence-transformers/clip-ViT-B-32",
+  "note": "Trained on faces from one family of generators. Deepfakes from other tools can score lower; treat the result as a risk signal, not proof."
+}

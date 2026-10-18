@@ -1,0 +1,40 @@
+{
+  "dataset": "Kaggle: manishkc06/engineering-graduate-salary-prediction",
+  "n_samples": 2980,
+  "currency": "INR",
+  "median_salary": 300000,
+  "deployed_model": "Ridge",
+  "comparison_on_holdout": {
+    "Baseline (mean)": {
+      "r2_log": -0.0011,
+      "cv5_r2_log": -0.002,
+      "mae_inr": 120815,
+      "median_abs_error_inr": 88461
+    },
+    "Ridge": {
+      "r2_log": 0.2442,
+      "cv5_r2_log": 0.2109,
+      "mae_inr": 97991,
+      "median_abs_error_inr": 75038
+    },
+    "RandomForest": {
+      "r2_log": 0.2044,
+      "cv5_r2_log": 0.1822,
+      "mae_inr": 98343,
+      "median_abs_error_inr": 72413
+    },
+    "GradientBoosting": {
+      "r2_log": 0.2288,
+      "cv5_r2_log": 0.195,
+      "mae_inr": 97590,
+      "median_abs_error_inr": 71417
+    }
+  },
+  "interval": {
+    "level": "80% (10th-90th percentile of CV residuals)",
+    "log_low": -0.619,
+    "log_high": 0.545,
+    "empirical_coverage": 0.8
+  },
+  "note": "Salary depends mostly on factors outside these inputs (skills, company, city). R2 is modest by nature; treat the range as a rough benchmark."
+}

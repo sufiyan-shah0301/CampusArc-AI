@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html, body { overflow-x: hidden; }
+  body { @apply bg-slate-50 text-slate-900 font-sans antialiased; }
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif; }
+  :focus-visible { @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900; }
+  ::selection { @apply bg-brand-200 text-brand-900; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-600/25 transition hover:from-brand-700 hover:to-indigo-700 hover:shadow-xl active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-6 py-3 text-sm font-bold text-slate-800 backdrop-blur transition hover:border-slate-400 hover:bg-white active:scale-[0.98] dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-100 dark:hover:bg-slate-800;
+  }
+  .card {
+    @apply rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm backdrop-blur transition dark:border-slate-700/70 dark:bg-slate-900/70;
+  }
+  .eyebrow { @apply text-xs font-extrabold uppercase tracking-[0.25em] text-brand-600 dark:text-brand-300; }
+  .section-title { @apply mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white; }
+  .section-sub { @apply mt-3 max-w-2xl text-base font-medium text-slate-600 dark:text-slate-300; }
+  .input-field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-900 placeholder-slate-400 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100;
+  }
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+.dark .grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ------------------------------------------------------------------ dark mode for the existing app pages
+   The pages were written with a small vocabulary of light utilities (bg-white, text-gray-800, ...). Remapping that
+   vocabulary here gives the whole app a dark theme without touching every className. Placed after the utilities so
+   plain source order wins. */
+.dark body { @apply bg-slate-950 text-slate-100; }
+.dark .bg-white { background-color: #111c2e; }
+.dark .bg-white\/90, .dark .bg-white\/80 { background-color: rgba(17, 28, 46, 0.85); }
+.dark .bg-gray-50, .dark .bg-slate-50 { background-color: #0b1220; }
+.dark .bg-gray-100, .dark .bg-slate-100 { background-color: #1a2740; }
+.dark .bg-gray-200, .dark .bg-slate-200 { background-color: #24334f; }
+.dark .text-gray-900, .dark .text-slate-900, .dark .text-gray-800, .dark .text-slate-800 { color: #f1f5f9; }
+.dark .text-gray-700, .dark .text-slate-700 { color: #dbe4f0; }
+.dark .text-gray-600, .dark .text-slate-600 { color: #b6c2d4; }
+.dark .text-gray-500, .dark .text-slate-500 { color: #94a3b8; }
+.dark .text-gray-400, .dark .text-slate-400 { color: #7c8aa0; }
+.dark .border-gray-100, .dark .border-slate-100, .dark .border-gray-200, .dark .border-slate-200 { border-color: #263650; }
+.dark .border-gray-300, .dark .border-slate-300 { border-color: #3a4c6b; }
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]), .dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]) { border-color: #263650; }
+.dark .hover\:bg-gray-50:hover, .dark .hover\:bg-gray-100:hover { background-color: #1a2740; }
+.dark input:not([type='checkbox']):not([type='radio']):not([type='range']), .dark select, .dark textarea { background-color: #0f1a2c; color: #e5ecf6; border-color: #31425f; }
+.dark input::placeholder, .dark textarea::placeholder { color: #6b7a92; }
+.dark .shadow-lg, .dark .shadow-xl, .dark .shadow-md { --tw-shadow-color: rgba(0, 0, 0, 0.45); }
+
+/* sign-in / sign-up: study items drifting from the bottom to the top of the form side */
+@keyframes float-up {
+  0%   { transform: translate3d(0, 0, 0) rotate(var(--r0, -10deg)); opacity: 0; }
+  10%  { opacity: var(--o, 0.55); }
+  50%  { transform: translate3d(var(--dx, 24px), -55vh, 0) rotate(0deg); }
+  90%  { opacity: var(--o, 0.55); }
+  100% { transform: translate3d(calc(var(--dx, 24px) * -1), -115vh, 0) rotate(var(--r1, 12deg)); opacity: 0; }
+}
+.float-item { position: absolute; bottom: -4rem; animation: float-up var(--d, 16s) linear var(--delay, 0s) infinite; will-change: transform; user-select: none; }
+
+/* ---------------------------------------------------------------------------------------------
+   Legacy pages (written before the redesign) use plain Tailwind utilities. Pull them toward the new look
+   without touching every file: gradient primary buttons, rounded inputs with a brand focus ring, calmer cards.
+   Scoped to the signed-in app shell and the public info pages (<main>), never to the landing page (it has its own classes).
+   --------------------------------------------------------------------------------------------- */
+main [class~="bg-teal-600"], main [class~="bg-teal-500"] {
+  background-image: linear-gradient(to right, theme('colors.brand.600'), theme('colors.indigo.600'));
+  border-radius: 0.75rem;
+}
+main [class~="bg-teal-600"]:hover, main [class~="bg-teal-500"]:hover { filter: brightness(0.93); }
+main [class~="bg-teal-600"]:disabled, main [class~="bg-teal-500"]:disabled { filter: grayscale(0.6) opacity(0.7); }
+
+main :is(input:not([type]), input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="number"], input[type="search"], textarea, select):not(.input-field):not(.react-datepicker__input-container input) {
+  border-radius: 0.75rem;
+  border-color: rgb(203 213 225);
+  transition: border-color .15s, box-shadow .15s;
+}
+main :is(input, textarea, select):not(.input-field):focus {
+  outline: none;
+  border-color: theme('colors.brand.500');
+  box-shadow: 0 0 0 4px rgb(20 184 166 / 0.15);
+}
+.dark main :is(input, textarea, select):not(.input-field) { border-color: rgb(71 85 105); }
+
+main .bg-white:is(.shadow-md, .shadow-lg, .shadow-xl) {
+  border-radius: 1rem;
+  border: 1px solid rgb(226 232 240 / 0.8);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.05);
+}
+.dark main .bg-white:is(.shadow-md, .shadow-lg, .shadow-xl) { border-color: rgb(51 65 85 / 0.7); }
+
+main h1 { font-family: theme('fontFamily.display'); letter-spacing: -0.02em; }
+
+/* one heading style for every page that does not set its own (.font-display) */
+main h1:not(.font-display) {
+  font-size: clamp(1.5rem, 1.15rem + 1vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: rgb(15 23 42);
+}
+.dark main h1:not(.font-display) { color: #fff; }
+main .text-center:has(> h1:first-child) { text-align: left; }
+main .text-center:has(> h1:first-child) > p { margin-left: 0; margin-right: 0; font-size: 0.95rem; }
+
+/* legacy page wrappers added their own full-height grey background and big padding */
+main .bg-slate-50.min-h-screen { background: transparent; min-height: 0; }
+main .min-h-screen > .max-w-7xl.py-12 { padding-top: 0.25rem; padding-bottom: 0.5rem; }

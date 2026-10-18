@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 14 176 180" role="img" aria-label="CampusArc logo">
+  <defs>
+    <linearGradient id="dk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4338ca"/><stop offset="1" stop-color="#1e1b6e"/></linearGradient>
+    <linearGradient id="tl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0b8574"/></linearGradient>
+  </defs>
+  <polygon points="100,20 160,47 100,72 40,47" fill="url(#dk)"/>
+  <path d="M66 62V86C84 72 116 72 134 86V62L100 76Z" fill="url(#dk)"/>
+  <path d="M152 52V80" stroke="#4338ca" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="152" cy="82" r="3.4" fill="#4338ca"/>
+  <path d="M149.5 86h5l1.5 11h-8z" fill="#f59e0b"/>
+  <circle cx="100" cy="102" r="10" fill="url(#dk)"/>
+  <path d="M46 92C74 100 106 122 106 160C106 169 105 175 103 180C97 167 88 160 80 152C70 140 64 106 46 92Z" fill="url(#dk)"/>
+  <path d="M146 94C122 99 108 118 104 130C108 142 108 162 105 178C113 160 121 136 131 120C137 110 142 102 146 94Z" fill="url(#tl)"/>
+  <path d="M18 152C50 150 86 162 102 188C70 172 40 168 22 170Z" fill="url(#dk)"/>
+  <path d="M32 134C62 134 92 148 102 174C80 158 56 150 32 148Z" fill="url(#dk)"/>
+  <path d="M186 152C154 150 118 162 102 188C134 172 164 168 182 170Z" fill="url(#tl)"/>
+  <path d="M172 134C142 134 112 148 102 174C124 158 148 150 172 148Z" fill="url(#tl)"/>
+</svg>

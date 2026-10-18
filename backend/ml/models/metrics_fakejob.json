@@ -1,0 +1,99 @@
+{
+  "dataset": "Kaggle: shivamb/real-or-fake-fake-jobposting-prediction",
+  "n_samples": 17880,
+  "n_fraudulent": 866,
+  "split": {
+    "fit": 10728,
+    "validation": 3576,
+    "test": 3576
+  },
+  "random_forest": {
+    "roc_auc": 0.974,
+    "pr_auc": 0.7884,
+    "precision": 0.8333,
+    "recall": 0.6358,
+    "f1": 0.7213,
+    "threshold": 0.4444
+  },
+  "logistic_regression_baseline": {
+    "roc_auc": 0.9796,
+    "pr_auc": 0.8648,
+    "precision": 0.705,
+    "recall": 0.815,
+    "f1": 0.756,
+    "threshold": 0.5
+  },
+  "thresholds": {
+    "medium": 0.4444,
+    "high": 0.4444
+  },
+  "isolation_forest": {
+    "roc_auc_vs_fraud_label": 0.6529,
+    "flagged_share_of_all": 0.0545,
+    "fraud_rate_in_flagged": 0.1436,
+    "fraud_rate_in_unflagged": 0.0429,
+    "recall_of_fraud_when_flagged": 0.1618
+  },
+  "rf_top_features": [
+    {
+      "feature": "tfidf:data entry",
+      "importance": 0.0114
+    },
+    {
+      "feature": "meta:log_desc_len",
+      "importance": 0.0077
+    },
+    {
+      "feature": "meta:log_req_len",
+      "importance": 0.0076
+    },
+    {
+      "feature": "tfidf:skills",
+      "importance": 0.0075
+    },
+    {
+      "feature": "tfidf:work home",
+      "importance": 0.007
+    },
+    {
+      "feature": "tfidf:work",
+      "importance": 0.0067
+    },
+    {
+      "feature": "meta:upper_ratio",
+      "importance": 0.0066
+    },
+    {
+      "feature": "tfidf:team",
+      "importance": 0.0064
+    },
+    {
+      "feature": "tfidf:growing",
+      "importance": 0.006
+    },
+    {
+      "feature": "tfidf:entry",
+      "importance": 0.0058
+    },
+    {
+      "feature": "tfidf:time",
+      "importance": 0.0056
+    },
+    {
+      "feature": "tfidf:web",
+      "importance": 0.0056
+    },
+    {
+      "feature": "tfidf:home",
+      "importance": 0.0049
+    },
+    {
+      "feature": "tfidf:administrative",
+      "importance": 0.0048
+    },
+    {
+      "feature": "tfidf:role",
+      "importance": 0.0046
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "dataset": "Kaggle: shivamb/real-or-fake-fake-jobposting-prediction (legitimate postings only)",
+  "n_samples": 16928,
+  "k_selected_by_silhouette": 16,
+  "silhouette_by_k": {
+    "6": 0.0799,
+    "8": 0.0798,
+    "10": 0.0894,
+    "12": 0.0952,
+    "14": 0.1039,
+    "16": 0.1109
+  },
+  "families": [
+    {
+      "id": 0,
+      "name": "Website / Search / Website Search",
+      "keywords": [
+        "website",
+        "search",
+        "website search",
+        "apply directly",
+        "relevant job",
+        "apply"
+      ],
+      "size": 503
+    },
+    {
+      "id": 1,
+      "name": "Software / Engineer / Product",
+      "keywords": [
+        "software",
+        "engineer",
+        "product",
+        "mobile",
+        "development",
+        "developer"
+      ],
+      "size": 1778
+    },
+    {
+      "id": 2,
+      "name": "Sales / Business / New",
+      "keywords": [
+        "sales",
+        "business",
+        "new",
+        "account",
+        "customer",
+        "relationships"
+      ],
+      "size": 1651
+    },
+    {
+      "id": 3,
+      "name": "Tefl Tesol / Tesol / Celta Teaching",
+      "keywords": [
+        "tefl tesol",
+        "tesol",
+        "celta teaching",
+        "loans credit",
+        "tefl",
+        "tesol celta"
+      ],
+      "size": 727
+    },
+    {
+      "id": 4,
+      "name": "Software / Technical / Development",
+      "keywords": [
+        "software",
+        "technical",
+        "development",
+        "systems",
+        "data",
+        "project"
+      ],
+      "size": 1574
+    },
+    {
+      "id": 5,
+      "name": "Management / Office / Support",
+      "keywords": [
+        "management",
+        "office",
+        "support",
+        "financial",
+        "customer",
+        "manager"
+      ],
+      "size": 2132
+    },
+    {
+      "id": 6,
+      "name": "Developer / Web / Javascript",
+      "keywords": [
+        "developer",
+        "web",
+        "javascript",
+        "php",
+        "end",
+        "css"
+      ],
+      "size": 1044
+    },
+    {
+      "id": 7,
+      "name": "Marketing / Campaigns / Digital",
+      "keywords": [
+        "marketing",
+        "campaigns",
+        "digital",
+        "media",
+        "online",
+        "manager"
+      ],
+      "size": 891
+    },
+    {
+      "id": 8,
+      "name": "Service / Customer / Customer Service",
+      "keywords": [
+        "service",
+        "customer",
+        "customer service",
+        "olds",
+        "year olds",
+        "sales"
+      ],
+      "size": 2306
+    },
+    {
+      "id": 9,
+      "name": "Care / Home / Time",
+      "keywords": [
+        "care",
+        "home",
+        "time",
+        "able",
+        "health",
+        "position"
+      ],
+      "size": 1477
+    },
+    {
+      "id": 10,
+      "name": "Mail / Service Associate / Customer Service",
+      "keywords": [
+        "mail",
+        "service associate",
+        "customer service",
+        "associate",
+        "customer",
+        "service"
+      ],
+      "size": 420
+    },
+    {
+      "id": 11,
+      "name": "Media / Social / Social Media",
+      "keywords": [
+        "media",
+        "social",
+        "social media",
+        "content",
+        "marketing",
+        "writing"
+      ],
+      "size": 881
+    },
+    {
+      "id": 12,
+      "name": "Designer / Design / User",
+      "keywords": [
+        "designer",
+        "design",
+        "user",
+        "web",
+        "ux",
+        "creative"
+      ],
+      "size": 694
+    },
+    {
+      "id": 13,
+      "name": "Transferwise / Money / International Money",
+      "keywords": [
+        "transferwise",
+        "money",
+        "international money",
+        "banks",
+        "money transfer",
+        "founded skype"
+      ],
+      "size": 92
+    },
+    {
+      "id": 14,
+      "name": "Engineering / Manufacturing / Equipment",
+      "keywords": [
+        "engineering",
+        "manufacturing",
+        "equipment",
+        "engineer",
+        "production",
+        "mechanical"
+      ],
+      "size": 652
+    },
+    {
+      "id": 15,
+      "name": "Premises / Offer Services / Services Expert",
+      "keywords": [
+        "premises",
+        "offer services",
+        "services expert",
+        "currently vacancy",
+        "expert based",
+        "customer premises"
+      ],
+      "size": 106
+    }
+  ]
+}

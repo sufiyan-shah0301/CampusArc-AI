@@ -1,0 +1,63 @@
+{
+  "dataset": "Kaggle: taruntiwarihp/phishing-site-urls",
+  "n_train_pool": 120000,
+  "deployed_model": "Ensemble (50/50)",
+  "comparison_on_holdout": {
+    "RandomForest (lexical features)": {
+      "roc_auc": 0.9549,
+      "pr_auc": 0.958,
+      "precision": 0.891,
+      "recall": 0.8619,
+      "f1": 0.8762
+    },
+    "LogisticRegression (char n-grams)": {
+      "roc_auc": 0.99,
+      "pr_auc": 0.9906,
+      "precision": 0.9591,
+      "recall": 0.9397,
+      "f1": 0.9493
+    },
+    "Ensemble (50/50)": {
+      "roc_auc": 0.991,
+      "pr_auc": 0.9918,
+      "precision": 0.9662,
+      "recall": 0.9519,
+      "f1": 0.959
+    }
+  },
+  "rf_top_features": [
+    {
+      "feature": "keyword_hits",
+      "importance": 0.1207
+    },
+    {
+      "feature": "longest_token",
+      "importance": 0.0923
+    },
+    {
+      "feature": "path_len",
+      "importance": 0.087
+    },
+    {
+      "feature": "dots",
+      "importance": 0.0854
+    },
+    {
+      "feature": "digits",
+      "importance": 0.0817
+    },
+    {
+      "feature": "slashes",
+      "importance": 0.0776
+    },
+    {
+      "feature": "url_len",
+      "importance": 0.0607
+    },
+    {
+      "feature": "hyphens",
+      "importance": 0.0599
+    }
+  ],
+  "note": "Lexical model: it judges the address only. Always combine with the sandbox preview; brand-new phishing domains can look clean."
+}
